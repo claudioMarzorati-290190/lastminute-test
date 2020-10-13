@@ -5,7 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>last-minute-test</artifactId>
-
+    <version>0.0.1</version>
+    <groupId>last-minute-test</groupId>
     <name>Last Minute Marzorati Test</name>
 
     <build>
