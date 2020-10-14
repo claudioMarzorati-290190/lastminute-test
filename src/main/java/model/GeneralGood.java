@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class GeneralGood extends GenericGood{
 
-    public GeneralGood(BigDecimal marketValue) {
-        super(marketValue);
+    public GeneralGood(String productName, BigDecimal marketValue, Integer quantity){
+        super(productName, marketValue, quantity);
     }
 
     public BigDecimal getTaxRateForProduct() {
