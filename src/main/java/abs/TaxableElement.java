@@ -1,9 +1,9 @@
-package model;
+package abs;
 
 import java.math.BigDecimal;
 
 public abstract class TaxableElement {
     public BigDecimal getTaxRate(){
-        return BigDecimal.valueOf(5);
+        return BigDecimal.valueOf(10);
     }
 }

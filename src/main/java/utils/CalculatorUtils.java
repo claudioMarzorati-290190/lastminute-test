@@ -1,7 +1,5 @@
 package utils;
 
-import impl.BillCalculator;
-import model.MedicalElement;
 
 import java.math.BigDecimal;
 

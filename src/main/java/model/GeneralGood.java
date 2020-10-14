@@ -1,15 +1,16 @@
 package model;
 
+import abs.GenericGood;
+
 import java.math.BigDecimal;
 
-public class GeneralGood extends GenericGood{
+/**
+ * This class rapresents any good that are not Food, Book or Medical
+ */
+public class GeneralGood extends GenericGood {
 
-    public GeneralGood(String productName, BigDecimal marketValue, Integer quantity){
-        super(productName, marketValue, quantity);
-    }
-
-    public BigDecimal getTaxRateForProduct() {
-        return BigDecimal.TEN;
+    public GeneralGood(String productName, BigDecimal marketValue, Integer quantity, Boolean imported) {
+        super(productName, marketValue, quantity, imported);
     }
 
 }

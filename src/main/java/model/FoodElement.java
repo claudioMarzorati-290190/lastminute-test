@@ -1,14 +1,17 @@
 package model;
 
+import abs.GenericGood;
+
 import java.math.BigDecimal;
 
-public class FoodElement extends GenericGood{
+public class FoodElement extends GenericGood {
 
-    public FoodElement(String productName, BigDecimal marketValue, Integer quantity){
-        super(productName, marketValue, quantity);
+    public FoodElement(String productName, BigDecimal marketValue, Integer quantity, Boolean imported) {
+        super(productName, marketValue, quantity, imported);
     }
 
-    public BigDecimal getTaxRateForProduct() {
+    @Override
+    public BigDecimal getTaxRate() {
         return BigDecimal.ZERO;
     }
 }

@@ -1,12 +1,9 @@
 package impl;
 
-import javax.validation.constraints.NotNull;
-
-import exceptions.LastMinuteException;
-import model.GenericGood;
-import model.MedicalElement;
+import abs.GenericGood;
 import utils.CalculatorUtils;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -18,8 +15,9 @@ public class BillCalculator {
      * @param good The good class
      * @return Tax amount
      */
-    protected BigDecimal getTaxesAmountForGood(@NotNull GenericGood good){
-        return good.getTaxRateForProduct().add(good.getTaxRate());
+    protected BigDecimal getTaxesAmountForGood(@NotNull GenericGood good) {
+        BigDecimal taxAmount = good.getImportDuty().add(good.getTaxRate());
+        return CalculatorUtils.percentage(good.getMarketValue(), taxAmount);
     }
 
     /**
@@ -30,7 +28,7 @@ public class BillCalculator {
      */
     protected BigDecimal getTotalAmountForProduct(@NotNull GenericGood good){
         BigDecimal goodValue = good.getMarketValue();
-        BigDecimal taxesAmount = CalculatorUtils.percentage(goodValue, getTaxesAmountForGood(good));
+        BigDecimal taxesAmount = getTaxesAmountForGood(good);
         return goodValue.add(taxesAmount);
     }
 
