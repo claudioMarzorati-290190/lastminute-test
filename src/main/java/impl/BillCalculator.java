@@ -63,7 +63,7 @@ public class BillCalculator {
     public BigDecimal getTotalTaxesAmountForGoodList(List<GenericGood> genericGoodList){
         BigDecimal result = BigDecimal.ZERO;
         for (GenericGood genericGood : genericGoodList) {
-            result = result.add(getTaxesAmountForGood(genericGood));
+            result = result.add(getTaxesAmountForGood(genericGood).multiply(BigDecimal.valueOf(genericGood.getQuantity())));
         }
         return result;
     }

@@ -60,6 +60,7 @@ public class BillCalculatorTest {
         goods.add(generalGood);
         goods.add(generalGood2);
 
+        Assertions.assertEquals(new BigDecimal(60), billCalculator.getTotalTaxesAmountForGoodList(goods));
     }
 
 }
