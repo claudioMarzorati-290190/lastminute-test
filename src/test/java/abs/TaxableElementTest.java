@@ -1,6 +1,6 @@
 package abs;
 
-import model.GeneralGood;
+import model.GeneralProduct;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +10,8 @@ public class TaxableElementTest {
 
     @Test
     public void shouldReturnCorrectTaxRate() {
-        GeneralGood generalGood = new GeneralGood("COMPUTER", BigDecimal.ONE, 1, false);
-        Assertions.assertEquals(BigDecimal.TEN, generalGood.getTaxRate());
+        GeneralProduct generalProduct = new GeneralProduct("COMPUTER", BigDecimal.ONE, 1, false);
+        Assertions.assertEquals(BigDecimal.TEN, generalProduct.getTaxRate());
     }
 
 }

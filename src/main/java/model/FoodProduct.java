@@ -4,10 +4,12 @@ import abs.GenericGood;
 
 import java.math.BigDecimal;
 
-public class MedicalElement extends GenericGood {
+/**
+ * This class represents any food product whether imported or not
+ */
+public class FoodProduct extends GenericGood {
 
-
-    public MedicalElement(String productName, BigDecimal marketValue, Integer quantity, Boolean imported) {
+    public FoodProduct(String productName, BigDecimal marketValue, Integer quantity, Boolean imported) {
         super(productName, marketValue, quantity, imported);
     }
 

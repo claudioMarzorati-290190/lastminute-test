@@ -11,6 +11,9 @@ import java.text.MessageFormat;
 import java.util.List;
 
 
+/**
+ * This class should do all calculation required for the test
+ */
 public class BillCalculator {
 
     private static final Logger logger = LoggerFactory.getLogger(BillCalculator.class);
@@ -75,14 +78,29 @@ public class BillCalculator {
         return result;
     }
 
+    /**
+     * This method just prints the single element on bill
+     *
+     * @param good
+     */
     public void printSingleBillElement(GenericGood good) {
         logger.info(MessageFormat.format("{0} {1} : {2}", good.getQuantity(), good.getProductName(), good.getMarketValue()));
     }
 
+    /**
+     * This method prints the row "sales taxes" on bill
+     *
+     * @param genericGoods
+     */
     public void printSalesTax(List<GenericGood> genericGoods) {
         logger.info(MessageFormat.format("Sales Taxes: {0}", getTotalTaxesAmountForGoodList(genericGoods)));
     }
 
+    /**
+     * This method prints the total amount (calculated by market value + all taxes) in a bill
+     *
+     * @param genericGoods
+     */
     public void printTotalAmount(List<GenericGood> genericGoods) {
         logger.info(MessageFormat.format("Total: {0}", getTotalAmountForGoodsList(genericGoods)));
     }

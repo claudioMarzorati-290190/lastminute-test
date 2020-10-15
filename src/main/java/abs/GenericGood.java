@@ -3,6 +3,12 @@ package abs;
 
 import java.math.BigDecimal;
 
+/**
+ * This abstract class is a generic representation of all type of data in this test
+ * Every new Product should extends this Class and, eventually, overrides getTaxRate()
+ *
+ * @see TaxableElement
+ */
 public abstract class GenericGood extends TaxableElement {
 
     protected String productName;

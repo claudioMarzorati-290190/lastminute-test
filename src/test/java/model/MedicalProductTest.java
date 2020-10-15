@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-public class MedicalElementTest {
+public class MedicalProductTest {
 
     @Test
     void shouldGetCorrectTaxRate() {
-        MedicalElement bookElement = new MedicalElement("Headache pills", BigDecimal.ONE, 1, false);
+        MedicalProduct bookElement = new MedicalProduct("Headache pills", BigDecimal.ONE, 1, false);
         Assertions.assertEquals(BigDecimal.ZERO, bookElement.getTaxRate());
     }
 }
