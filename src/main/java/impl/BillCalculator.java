@@ -83,8 +83,10 @@ public class BillCalculator {
      *
      * @param good
      */
-    public void printSingleBillElement(GenericGood good) {
-        logger.info(MessageFormat.format("{0} {1} : {2}", good.getQuantity(), good.getProductName(), good.getMarketValue()));
+    public String printSingleBillElement(GenericGood good) {
+        String message = MessageFormat.format("{0} {1} : {2}", good.getQuantity(), good.getProductName(), good.getMarketValue());
+        logger.info(message);
+        return message;
     }
 
     /**
@@ -92,8 +94,10 @@ public class BillCalculator {
      *
      * @param genericGoods
      */
-    public void printSalesTax(List<GenericGood> genericGoods) {
-        logger.info(MessageFormat.format("Sales Taxes: {0}", getTotalTaxesAmountForGoodList(genericGoods)));
+    public String printSalesTax(List<GenericGood> genericGoods) {
+        String message = MessageFormat.format("Sales Taxes: {0}", getTotalTaxesAmountForGoodList(genericGoods));
+        logger.info(message);
+        return message;
     }
 
     /**
@@ -101,7 +105,9 @@ public class BillCalculator {
      *
      * @param genericGoods
      */
-    public void printTotalAmount(List<GenericGood> genericGoods) {
-        logger.info(MessageFormat.format("Total: {0}", getTotalAmountForGoodsList(genericGoods)));
+    public String printTotalAmount(List<GenericGood> genericGoods) {
+        String message = MessageFormat.format("Total: {0}", getTotalAmountForGoodsList(genericGoods));
+        logger.info(message);
+        return message;
     }
 }
