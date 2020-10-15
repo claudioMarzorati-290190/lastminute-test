@@ -13,13 +13,13 @@ public class CalculatorUtils {
     protected static final BigDecimal ONE_HUNDRED = new BigDecimal(100);
 
     public static BigDecimal percentage(BigDecimal base, BigDecimal pct) {
-        return round(pct.multiply(base).divide(ONE_HUNDRED), new BigDecimal(0.05), RoundingMode.UP);
+        return round(pct.multiply(base).divide(ONE_HUNDRED), BigDecimal.valueOf(0.05), RoundingMode.UP);
     }
 
-    public static BigDecimal round(BigDecimal value, BigDecimal increment,
-                                   RoundingMode roundingMode) {
+    protected static BigDecimal round(BigDecimal value, BigDecimal increment,
+                                      RoundingMode roundingMode) {
         if (increment.signum() == 0) {
-            // 0 increment does not make much sense, but prevent division by 0
+            // this prevents division by zero
             return value;
         } else {
             BigDecimal divided = value.divide(increment, 0, roundingMode);

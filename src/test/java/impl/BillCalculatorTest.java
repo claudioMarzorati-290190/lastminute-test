@@ -16,28 +16,28 @@ public class BillCalculatorTest {
     @Test
     public void shouldGetCorrectTaxesAmountForGood() {
         GenericGood generalGood = new GeneralGood("COMPUTER", new BigDecimal(100), 1, true);
-        Assertions.assertEquals(new BigDecimal(15), billCalculator.getTaxesAmountForGood(generalGood));
+        Assertions.assertEquals(new BigDecimal(15).setScale(2), billCalculator.getTaxesAmountForGood(generalGood));
 
         generalGood = new GeneralGood("COMPUTER", new BigDecimal(100), 1, false);
-        Assertions.assertEquals(BigDecimal.TEN, billCalculator.getTaxesAmountForGood(generalGood));
+        Assertions.assertEquals(BigDecimal.TEN.setScale(2), billCalculator.getTaxesAmountForGood(generalGood));
     }
 
     @Test
     public void shouldGetCorrectTotalAmountForGood() {
         GenericGood generalGood = new GeneralGood("COMPUTER", new BigDecimal(100), 1, true);
-        Assertions.assertEquals(new BigDecimal(115), billCalculator.getTotalAmountForProduct(generalGood));
+        Assertions.assertEquals(new BigDecimal(115).setScale(2), billCalculator.getTotalAmountForProduct(generalGood));
 
         generalGood = new GeneralGood("COMPUTER", new BigDecimal(100), 1, false);
-        Assertions.assertEquals(new BigDecimal(110), billCalculator.getTotalAmountForProduct(generalGood));
+        Assertions.assertEquals(new BigDecimal(110).setScale(2), billCalculator.getTotalAmountForProduct(generalGood));
     }
 
     @Test
     public void shouldGetCorrectTotalAmountForGoodByQuantity() {
         GenericGood generalGood = new GeneralGood("COMPUTER", new BigDecimal(100), 2, true);
-        Assertions.assertEquals(new BigDecimal(230), billCalculator.getTotalAmountForProductsByQuantiy(generalGood));
+        Assertions.assertEquals(new BigDecimal(230).setScale(2), billCalculator.getTotalAmountForProductsByQuantiy(generalGood));
 
         generalGood = new GeneralGood("COMPUTER", new BigDecimal(100), 2, false);
-        Assertions.assertEquals(new BigDecimal(220), billCalculator.getTotalAmountForProductsByQuantiy(generalGood));
+        Assertions.assertEquals(new BigDecimal(220).setScale(2), billCalculator.getTotalAmountForProductsByQuantiy(generalGood));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class BillCalculatorTest {
         List<GenericGood> goods = new ArrayList<>();
         goods.add(generalGood);
         goods.add(generalGood2);
-        Assertions.assertEquals(new BigDecimal(460), billCalculator.getTotalAmountForGoodsList(goods));
+        Assertions.assertEquals(new BigDecimal(460).setScale(2), billCalculator.getTotalAmountForGoodsList(goods));
     }
 
     @Test
@@ -60,7 +60,7 @@ public class BillCalculatorTest {
         goods.add(generalGood);
         goods.add(generalGood2);
 
-        Assertions.assertEquals(new BigDecimal(60), billCalculator.getTotalTaxesAmountForGoodList(goods));
+        Assertions.assertEquals(new BigDecimal(60).setScale(2), billCalculator.getTotalTaxesAmountForGoodList(goods));
     }
 
 }
