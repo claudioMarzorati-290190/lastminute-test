@@ -7,6 +7,7 @@ import model.FoodProduct;
 import model.GeneralProduct;
 import model.MedicalProduct;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -31,6 +32,11 @@ public class TestResult {
     @AfterAll
     public static void endsTest() {
         logger.info("***** ENDS TEST CASES ******");
+    }
+
+    @AfterEach
+    public void afterEach() {
+        logger.info("***** END SINGLE TEST CASE *****\n\n");
     }
 
     @Test
