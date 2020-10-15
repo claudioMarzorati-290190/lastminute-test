@@ -1,17 +1,24 @@
 package impl;
 
 import abs.GenericGood;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.CalculatorUtils;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.text.MessageFormat;
 import java.util.List;
 
+
 public class BillCalculator {
+
+    private static final Logger logger = LoggerFactory.getLogger(BillCalculator.class);
 
     /**
      * This method is used to calculate the tax amount for any good
      * Tax amount are calculated by add the Import Duty Tax to Product-specific tax
+     *
      * @param good The good class
      * @return Tax amount
      */
@@ -22,7 +29,7 @@ public class BillCalculator {
 
     /**
      * This method is used to calculate the amount price for any good
-     * The amount are calculated by adding marketValue (or price without taxes) to taxes itself
+     * The amount are calculated by simply return the marketValue
      * @param good The good class
      * @return Amount price
      */
@@ -60,11 +67,23 @@ public class BillCalculator {
      * @param genericGoodList the good list
      * @return Total amount taxes for a list of goods
      */
-    public BigDecimal getTotalTaxesAmountForGoodList(List<GenericGood> genericGoodList){
+    public BigDecimal getTotalTaxesAmountForGoodList(List<GenericGood> genericGoodList) {
         BigDecimal result = BigDecimal.ZERO;
         for (GenericGood genericGood : genericGoodList) {
             result = result.add(getTaxesAmountForGood(genericGood).multiply(BigDecimal.valueOf(genericGood.getQuantity())));
         }
         return result;
+    }
+
+    public void printSingleBillElement(GenericGood good) {
+        logger.info(MessageFormat.format("{0} {1} : {2}", good.getQuantity(), good.getProductName(), good.getMarketValue()));
+    }
+
+    public void printSalesTax(List<GenericGood> genericGoods) {
+        logger.info(MessageFormat.format("Sales Taxes: {0}", getTotalTaxesAmountForGoodList(genericGoods)));
+    }
+
+    public void printTotalAmount(List<GenericGood> genericGoods) {
+        logger.info(MessageFormat.format("Total: {0}", getTotalAmountForGoodsList(genericGoods)));
     }
 }
