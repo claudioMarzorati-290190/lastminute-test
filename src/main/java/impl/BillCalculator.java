@@ -79,7 +79,7 @@ public class BillCalculator {
     }
 
     /**
-     * This method just prints the single element on bill
+     * This method just prints the single element on bill and returns the message
      *
      * @param good
      */
@@ -90,7 +90,7 @@ public class BillCalculator {
     }
 
     /**
-     * This method prints the row "sales taxes" on bill
+     * This method prints the row "sales taxes" on bill and returns the message
      *
      * @param genericGoods
      */
@@ -101,7 +101,7 @@ public class BillCalculator {
     }
 
     /**
-     * This method prints the total amount (calculated by market value + all taxes) in a bill
+     * This method prints the total amount (calculated by market value + all taxes) in a bill and returns the message
      *
      * @param genericGoods
      */
