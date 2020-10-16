@@ -21,7 +21,7 @@ When I purchase items I receive a receipt which lists the name of all the items 
 paid. The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains
 (np/100 rounded up to the nearest 0.05) amount of sales tax.<p>
 Write an application that prints out the receipt details for these shopping baskets...</p><p>
-INPUT:
+INPUT:<br>
 Input 1:<br>
 1 book at 12.49<br>
 1 music CD at 14.99<br>
@@ -79,7 +79,7 @@ Product concrete classes;
 1. [FoodProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/FoodProduct.java) -> Represents Food product
 2. [BookProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/BookProduct.java) -> Represents a Book Product
 3. [MedicalProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/MedicalProduct.java) -> Represents a Medical Product
-4. [GeneralProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/GeneralProduct.java) -> Represents a Product that is not a Food, or book, or Medical (e.g. "bottle of perfume)
+4. [GeneralProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/GeneralProduct.java) -> Represents a Product that is not a Food, or book, or Medical (e.g. "bottle of perfume")
 
 #### Business logic classes are:
 * [BillCalculator.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/impl/BillCalculator.java) -> This class contains all method that let application calculate all taxes and prices
