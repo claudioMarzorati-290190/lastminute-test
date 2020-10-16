@@ -2,6 +2,11 @@
 
 To clone this repository use:<br>
 <i>git clone https://github.com/claudioMarzorati-290190/lastminute-test.git </i>
+<p>
+This project is related to this Travis CI
+<br>
+https://travis-ci.com/github/claudioMarzorati-290190/lastminute-test/
+</p>
 
 For any further questions please refer to:<br>
 * claudio.marzorati90@gmail.com
@@ -62,4 +67,23 @@ Total: 74.68
 <hr/>
 <h3>Technical Overview</h3>
 
-//TODO
+##### Tests Result is generated both in: 
+* Junit Tests -> [TestResult.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/test/java/testresult/TestResult.java)
+* Java Main Class that writes into a file -> [BillMainGenerator.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/main/BillMainGenerator.java)
+
+#####  Abstract class is:
+* [GenericGood.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/abs/GenericGood.java) -> Represent a generic Product that cannot be instantiated. We use this Class to not repeat every method in
+Product concrete classes;
+
+#####  Product concrete classes are:
+1. [FoodProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/FoodProduct.java) -> Represents Food product
+2. [BookProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/BookProduct.java) -> Represents a Book Product
+3. [MedicalProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/MedicalProduct.java) -> Represents a Medical Product
+4. [GeneralProduct.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/model/GeneralProduct.java) -> Represents a Product that is not a Food, or book, or Medical (e.g. "bottle of perfume)
+
+#### Business logic classes are:
+* [BillCalculator.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/impl/BillCalculator.java) -> This class contains all method that let application calculate all taxes and prices
+* [CalculatorUtils.java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/main/java/utils/CalculatorUtils.java) -> Utility Class which calculate the tax percentage from base price value
+
+#### Other Junit tests
+Other Junit tests written in [/src/test/java](https://github.com/claudioMarzorati-290190/lastminute-test/blob/main/src/test/java) folder to test all functionalities works as expected

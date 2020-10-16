@@ -6,10 +6,8 @@ import java.math.BigDecimal;
 /**
  * This abstract class is a generic representation of all type of data in this test
  * Every new Product should extends this Class and, eventually, overrides getTaxRate()
- *
- * @see TaxableElement
  */
-public abstract class GenericGood extends TaxableElement {
+public abstract class GenericGood {
 
     protected String productName;
 
@@ -44,5 +42,9 @@ public abstract class GenericGood extends TaxableElement {
         } else {
             return BigDecimal.ZERO;
         }
+    }
+
+    public BigDecimal getTaxRate() {
+        return BigDecimal.valueOf(10);
     }
 }
