@@ -84,7 +84,7 @@ public class BillCalculator {
      * @param good
      */
     public String printSingleBillElement(GenericGood good) {
-        String message = MessageFormat.format("{0} {1} : {2}", good.getQuantity(), good.getProductName(), good.getMarketValue());
+        String message = MessageFormat.format("{0} {1} : {2}", good.getQuantity(), good.getProductName(), getTotalAmountForProduct(good));
         logger.info(message);
         return message;
     }

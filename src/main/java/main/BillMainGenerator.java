@@ -12,6 +12,10 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Main class of the Application
+ * It has hard-coded data input and write expected result in file "output.xml"
+ */
 public class BillMainGenerator {
 
     protected static final String OUTPUT_FILE_NAME = "output.txt";
